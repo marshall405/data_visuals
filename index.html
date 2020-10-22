@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Easy Chart</title>
     <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
-    <h1>Hello</h1>
-
-    <input id="data" type="text" placeholder="add new data number" />
-    <button id="addData">Add</button>
-
-
-
+    <h1>Easy Chart</h1>
+    <p>Just enter your data, copy the code below and paste into your HTML file. Add your own CSS!</p>
+    <div class="input-container">
+        <input id="data" type="text" placeholder="add new data number" />
+        <button id="addData">Add</button>
+    </div>
+    <div id="chart" class="chart-container">Bar Chart</div>
+    <div class="chart-controls">
+        <button id="clear">Clear Chart</button>
+    </div>
+    <div class="display-code">
+        <h4>Copy Code</h4>
+        <textarea id="code" value=""></textarea>
+    </div>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="main.js"></script>
 </body>

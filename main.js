@@ -1,6 +1,21 @@
-const dataSet = []
+let dataSet = [423, 1234, 1535, 1463]
+const code = document.getElementById('code')
 
+document.getElementById('data').addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+        // Enter
+        addData()
+    }
+})
 document.getElementById('addData').addEventListener('click', () => {
+    addData()
+})
+document.getElementById('clear').addEventListener('click', () => {
+    dataSet = []
+    renderData()
+})
+
+function addData() {
     const data = document.getElementById('data')
     if (Number(data.value)) {
         dataSet.push(Number(data.value))
@@ -8,31 +23,39 @@ document.getElementById('addData').addEventListener('click', () => {
     } else {
         alert('Data must be a number!')
     }
+    data.focus()
     data.value = ""
+}
+const div = d3.selectAll("#chart")
+let width = parseInt(window.getComputedStyle(document.getElementById('chart')).width)
+window.addEventListener('resize', () => {
+    width = parseInt(window.getComputedStyle(document.getElementById('chart')).width)
+    renderData()
 })
-
-const div = d3.create("div")
-    .style('font', '10px sans-serif')
-    .style('background-color', 'black')
-    .style('color', 'white')
-    .html('New Data Set')
 
 function renderData() {
     const x = d3.scaleLinear()
         .domain([0, d3.max(dataSet)])
-        .range([0, 420])
+        .range([1, width - 40])
     dataSet.sort((a, b) => a - b)
     div.selectAll('div')
         .data(dataSet)
         .join('div')
-        .style('background', 'steelblue')
-        .style('padding', '3px')
-        .style('margin', '1px')
         .style('width', d => `${x(d)}px`)
         .text(d => d);
+    updateCode()
 }
 
+renderData()
 
-document.body.appendChild(div.node())
 
+function updateCode() {
 
+    let innerText = '<div class="chart-container">'
+    document.querySelectorAll('#chart div').forEach(div => {
+        innerText += `<div style="width: ${div.style.width}">${div.innerText}</div>`
+    })
+    innerText += '</div>'
+    code.innerText = innerText
+
+}
