@@ -8,7 +8,9 @@ html {
     font-size: 16px;
 }
 
-
+h1, p {
+    padding: 5px;
+}
 .chart-container {
     background: black;
     color: #FFF;
@@ -21,6 +23,7 @@ html {
     font-size: 10px;
     border-radius: 0px 5px 5px 0px; 
     box-shadow: inset 0px 0px 2px #FFF;
+    text-align: right;
 }
 
 .input-container {
