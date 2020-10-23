@@ -11,7 +11,8 @@
 
 <body>
     <h1>Easy Chart</h1>
-    <p>Just enter your data, copy the code below and paste into your HTML file. Add your own CSS!</p>
+    <h4>Quickly generate HTML code to display your data!</h4>
+    <p class="note rounded">Just enter your data, copy the code below and paste into your HTML file. BYOCSS(Bring Your Own CSS)!</p>
     <div class="input-container">
         <input id="data" type="text" placeholder="add new data number" />
         <button id="addData">Add</button>
@@ -24,6 +25,11 @@
         <h4>Copy Code</h4>
         <textarea id="code" value=""></textarea>
     </div>
+
+    <p class="note">To increase or decrease the size of the chart, resize your browser until you get the desired width, then copy the code.
+    </p>
+    <p class="note warning">Currently, Easy Chart does not support auto resizing when copy-pasting the above code. If you want a responsive chart,
+        you can add an event listener to the window and adjust each div accordingly. (JS experience may be needed)</p>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="main.js"></script>
 </body>

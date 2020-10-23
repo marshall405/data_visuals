@@ -72,3 +72,18 @@ button {
     width: 90%;
     height: 300px;
 }
+
+.rounded {
+    border-radius: 5px;
+}
+.note {
+    text-align: center;
+    width: 90%;
+    margin: 0px auto;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    padding: 5px;
+}
+.warning {
+    color: red;
+}
