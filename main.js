@@ -26,7 +26,8 @@ function addData() {
     data.focus()
     data.value = ""
 }
-const div = d3.selectAll("#chart")
+const div = d3.select("#chart")
+
 let width = parseInt(window.getComputedStyle(document.getElementById('chart')).width)
 window.addEventListener('resize', () => {
     width = parseInt(window.getComputedStyle(document.getElementById('chart')).width)

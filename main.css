@@ -29,7 +29,9 @@ h1, p {
     box-shadow: inset 0px 0px 2px #FFF;
     text-align: right;
 }
-
+.chart-container div:hover {
+    background: rgba(165, 72, 184,.7);
+}
 .input-container {
     margin: 15px;
     text-align: center;
