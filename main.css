@@ -28,11 +28,15 @@ h1, p {
     border-radius: 0px 5px 5px 0px; 
     box-shadow: inset 0px 0px 2px #FFF;
     text-align: right;
+    transition: width .5s ease-in-out;
 }
 .chart-container div:hover {
     background: rgba(165, 72, 184,.7);
 }
 .input-container {
+    background: rgba(255, 255, 255, 0.829);
+    position: sticky;
+    top: 0;
     margin: 15px;
     text-align: center;
     display: flex;
